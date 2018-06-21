@@ -4,7 +4,16 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 // 1debc0d322cb5c1eea7d1bec6cec01f3
-
+const root = document.querySelector('#root');
+function style() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgba(${r},${g},${b},0.25)`;
+}
+function changeBackground() {
+  root.style.background = style();
+}
 class QuoteBoxContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -57,6 +66,7 @@ class QuoteBoxContainer extends React.Component {
       author,
       quote,
     });
+    changeBackground();
   }
 
   loadQuote() {
@@ -89,15 +99,21 @@ function QuoteBox(props) {
   return (
     <div id="quote-box">
       <div className="quote-text">
-        <p id="text">{props.quote}</p>
-        <p id="author">{props.author}</p>
+        <p id="text">
+          <span className="quotes">“</span>
+          {props.quote}
+          <span className="quotes">”</span>
+        </p>
+        <p id="author">- {props.author}</p>
       </div>
       <div className="quote-control">
         <button id="new-quote" onClick={props.newQuoteHandler}>
           New Quote
         </button>
         <a id="tweet-quote" href={tweetLink} target="_blank" rel="noreferrer noopener">
-          <button>Tweet Quote</button>
+          <button>
+            <i className="fab fa-twitter" aria-hidden="true" />
+          </button>
         </a>
       </div>
     </div>

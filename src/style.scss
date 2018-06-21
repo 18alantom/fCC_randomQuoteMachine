@@ -1,10 +1,92 @@
-
+$font-color: rgba(49, 49, 49, 0.4);
+$font-hover-color: rgba(49, 49, 49, 0.9);
 #quote-box {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  width: 40%;
+  transform: translate(-50%, -50%);
+  width: 50%;
   min-width: 320px;
-  background: rgba(255, 0, 0, 0.308);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 32px;
+  border-radius: 8px;
+  text-align: center;
+  transition-duration: 500ms;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+
+.quotes {
+  color: rgba(66, 66, 66, 0.5);
+  font-size: 3rem;
+}
+
+#text {
+  padding: 0px;
+  margin: 0px;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#author {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: right;
+}
+
+button {
+  float: right;
+  position: relative;
+  top: 8px;
+  left: 16px;
+  font-size: 00.8rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 4px;
+  margin-left: 4px;
+  margin-bottom: -16px;
+  color: $font-color;
+  transition-duration: 300ms;
+}
+
+button:hover {
+  color: $font-hover-color;
+}
+
+#root {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background:  rgba(68, 0, 255, 0.25);
+  transition-duration: 1000ms;
+}
+footer {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 100%;
+  transform: translateY(-100%);
+  text-align: center;
+  width: 100%;
+  color: $font-color;
+  padding: 8px;
+  a {
+    transition-duration: 300ms;
+  }
+  a:hover {
+    color: $font-hover-color;
+    text-decoration: none;
+  }
+  a:link {
+    color: $font-color;
+    text-decoration: none;
+  }
+  a:visited {
+    color: $font-color;
+    text-decoration: none;
+  }
 }
